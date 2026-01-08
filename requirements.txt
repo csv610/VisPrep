@@ -1,0 +1,10 @@
+# ImageUtils Dependencies
+
+# Core Image Processing
+Pillow>=10.0.0          # PIL/Pillow for image manipulation
+opencv-python>=4.8.0   # OpenCV for computer vision operations
+numpy>=1.24.0          # NumPy for array operations
+
+# Optional: For enhanced functionality
+# Uncomment if needed for your use case:
+# pillow-simd>=9.0.0   # SIMD-accelerated Pillow (faster image operations)
