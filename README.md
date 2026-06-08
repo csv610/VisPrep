@@ -48,7 +48,7 @@ visprep collect . --recursive
 
 | Category | Functions |
 |----------|-----------|
-| **API Prep** | `prepare_for_api()`, `anthropic_prepare()`, `openai_prepare()` |
+| **API Prep** | `prepare_for_api()` |
 | **Convert** | `encode_to_base64()`, `pil_to_b64()`, `b64_to_pil()`, `cv2_to_pil()`, `pil_to_cv2()` |
 | **Transform** | `resize_to_dimensions()`, `square_image()`, `crop()`, `resize_images_to_fit()` |
 | **Metadata** | `get_image_info()`, `auto_orient()`, `remove_exif()`, `get_image_size_mb()` |
@@ -57,16 +57,15 @@ visprep collect . --recursive
 | **Save** | `save_image()`, `save_pil_image()`, `save_from_b64()`, `save_images_batch()` |
 | **Collect** | `collect_images()`, `collect_images_with_info()` |
 
-## API Adapters
+## Usage
 
 ```python
-# Claude: JPEG, auto-oriented, stripped, quality 85
-b64 = anthropic_prepare("photo.jpg")
+from visprep import prepare_for_api
 
-# GPT-4V: PNG, auto-oriented, stripped, max 2048px
-b64 = openai_prepare("photo.jpg")
+# Claude, GPT-4V, Gemini, Ollama — all use the same base64 format
+b64 = prepare_for_api("photo.jpg")
 
-# Full control
+# Full control over every step
 b64 = prepare_for_api(
     "photo.jpg",
     auto_rotate=True,
@@ -74,6 +73,7 @@ b64 = prepare_for_api(
     target_format="WEBP",
     quality=80,
     max_dimension=1024,
+    max_size_mb=5,
 )
 ```
 
