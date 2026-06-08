@@ -5,7 +5,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from image_utils._utils import _convert_to_rgb, logger
+from visprep._utils import _convert_to_rgb, logger
 
 
 def remove_alpha_channel(image: str | Image.Image, background_color: tuple[int, int, int] = (255, 255, 255)) -> Image.Image:

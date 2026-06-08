@@ -1,7 +1,7 @@
 """Tests for image transformation functions."""
 
 
-from image_utils import add_alpha_channel, convert_format, crop, remove_alpha_channel, resize_to_dimensions, square_image
+from visprep import add_alpha_channel, convert_format, crop, remove_alpha_channel, resize_to_dimensions, square_image
 
 import pytest
 from PIL import Image

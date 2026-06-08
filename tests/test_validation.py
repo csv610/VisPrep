@@ -1,7 +1,7 @@
 """Tests for validation functions."""
 
 
-from image_utils import collect_images, is_valid_dimensions, is_valid_image, is_valid_size
+from visprep import collect_images, is_valid_dimensions, is_valid_image, is_valid_size
 
 import pytest
 from pathlib import Path

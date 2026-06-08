@@ -1,7 +1,7 @@
 """Tests for image creation functions."""
 
 
-from image_utils import create_blank_image, create_gradient_image, create_random_image
+from visprep import create_blank_image, create_gradient_image, create_random_image
 
 import pytest
 from PIL import Image

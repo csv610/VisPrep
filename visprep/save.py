@@ -8,8 +8,8 @@ from typing import Literal
 import numpy as np
 from PIL import Image
 
-from image_utils._utils import _convert_to_rgb, logger
-from image_utils.convert import cv2_to_pil, b64_to_pil
+from visprep._utils import _convert_to_rgb, logger
+from visprep.convert import cv2_to_pil, b64_to_pil
 
 
 _FORMAT_ALIASES = {"JPG": "JPEG"}

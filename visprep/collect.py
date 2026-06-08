@@ -7,8 +7,8 @@ from typing import Literal
 
 from PIL import Image
 
-from image_utils._utils import _validate_directory_exists, VALID_IMAGE_EXTENSIONS, logger
-from image_utils.metadata import get_image_info
+from visprep._utils import _validate_directory_exists, VALID_IMAGE_EXTENSIONS, logger
+from visprep.metadata import get_image_info
 
 
 def collect_images(

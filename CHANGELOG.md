@@ -9,9 +9,9 @@ pip-installable package.
 - Modular package layout under ``image_utils/`` (12 modules).
 - ``prepare_for_api()`` — single-call pipeline: orient → strip EXIF → convert
   → resize → base64 for LLM vision APIs.
-- CLI via ``image-utils`` / ``python -m image_utils`` with ``prepare``,
+- CLI via ``visprep`` / ``python -m visprep`` with ``prepare``,
   ``info``, ``resize``, ``square``, ``collect`` subcommands.
-- OpenCV made fully optional (``pip install "image-utils[cv2]"``).
+- OpenCV made fully optional (``pip install "visprep[cv2]"``).
 - ``WEBP`` support in ``pil_to_b64``, ``save_image``, ``convert_format``,
   ``estimate_compressed_size``.
 - Function-level docstrings (Args/Returns/Raises) on all 30+ public functions.

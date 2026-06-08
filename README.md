@@ -1,24 +1,24 @@
-# Image Utils
+# VisPrep
 
-Image processing utilities for vision analysis pipelines. Prepare images for LLM vision APIs (Claude, GPT-4V, etc.) with auto-orient, EXIF stripping, resize, and base64 encoding — all in one call.
+Image preparation for vision-language model APIs. Auto-orient, strip EXIF, resize, compress to size limit, and base64 encode — all in one call.
 
 ## Install
 
 ```bash
-pip install pillow numpy       # core
-pip install opencv-python      # optional — for cv2 functions
+pip install visprep             # from PyPI
+pip install opencv-python       # optional — for cv2 functions
 ```
 
 Or from source:
 ```bash
-pip install -e .            # adds image-utils CLI command
+pip install -e .            # adds visprep CLI command
 pip install -e ".[cv2]"     # include opencv-python
 ```
 
 ## Quick Start
 
 ```python
-from image_utils import prepare_for_api
+from visprep import prepare_for_api
 
 # One-shot: validate → orient → strip EXIF → resize → base64
 b64 = prepare_for_api("photo.jpg")
@@ -29,19 +29,19 @@ b64 = prepare_for_api("photo.jpg")
 
 ```bash
 # Prepare an image for API submission
-image-utils prepare photo.jpg
+visprep prepare photo.jpg
 
 # Get image info
-image-utils info photo.jpg
+visprep info photo.jpg
 
 # Resize and save
-image-utils resize photo.jpg --max-size 5 -o small.jpg
+visprep resize photo.jpg --max-size 5 -o small.jpg
 
 # Square crop with custom background
-image-utils square photo.jpg --size 512 --bg 0,0,0 -o square.jpg
+visprep square photo.jpg --size 512 --bg 0,0,0 -o square.jpg
 
 # Collect images in a directory
-image-utils collect . --recursive
+visprep collect . --recursive
 ```
 
 ## Key Functions
@@ -80,9 +80,9 @@ b64 = prepare_for_api(
 ## OpenCV Optional
 
 ```python
-from image_utils import CV2_AVAILABLE
+from visprep import CV2_AVAILABLE
 if CV2_AVAILABLE:
-    from image_utils import cv2_to_pil, pil_to_cv2
+    from visprep import cv2_to_pil, pil_to_cv2
 ```
 
 ## Requirements

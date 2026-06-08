@@ -9,7 +9,7 @@ from typing import Literal
 import numpy as np
 from PIL import Image
 
-from image_utils._utils import (
+from visprep._utils import (
     _convert_to_rgb, CV2_AVAILABLE, cv2,
     MAX_IMAGE_SIZE_BYTES, MIN_IMAGE_DIMENSION, VALID_IMAGE_EXTENSIONS, logger,
 )
@@ -80,7 +80,7 @@ def b64_to_pil(b64_string: str) -> Image.Image:
 
     Example::
 
-        >>> from image_utils import b64_to_pil
+        >>> from visprep import b64_to_pil
         >>> b64 = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg=="
         >>> img = b64_to_pil(b64)
         >>> img.size
@@ -110,7 +110,7 @@ def pil_to_b64(image: Image.Image, image_format: Literal["JPEG", "PNG", "WEBP"] 
     Example::
 
         >>> from PIL import Image
-        >>> from image_utils import pil_to_b64
+        >>> from visprep import pil_to_b64
         >>> img = Image.new("RGB", (10, 10), color=(0, 128, 0))
         >>> b64 = pil_to_b64(img, image_format="PNG", include_data_uri=False)
         >>> isinstance(b64, str)
@@ -312,7 +312,7 @@ def is_valid_image(path: Path) -> bool:
     Example::
 
         >>> from pathlib import Path
-        >>> from image_utils import is_valid_image
+        >>> from visprep import is_valid_image
         >>> is_valid_image(Path("photo.jpg"))
         True
         >>> is_valid_image(Path("document.pdf"))

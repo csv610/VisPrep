@@ -1,4 +1,4 @@
-"""Pytest configuration and shared fixtures for ImageUtils tests."""
+"""Pytest configuration and shared fixtures for VisPrep tests."""
 
 import pytest
 import tempfile

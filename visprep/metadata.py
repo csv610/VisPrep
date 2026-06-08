@@ -6,7 +6,7 @@ from pathlib import Path
 
 from PIL import Image
 
-from image_utils._utils import _convert_to_rgb, _validate_file_exists, logger
+from visprep._utils import _convert_to_rgb, _validate_file_exists, logger
 
 
 def get_image_info(image_path: str) -> dict:

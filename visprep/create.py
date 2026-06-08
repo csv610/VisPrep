@@ -7,7 +7,7 @@ from typing import Literal
 import numpy as np
 from PIL import Image
 
-from image_utils._utils import logger
+from visprep._utils import logger
 
 
 def create_blank_image(
@@ -20,7 +20,7 @@ def create_blank_image(
 
     Example::
 
-        >>> from image_utils import create_blank_image
+        >>> from visprep import create_blank_image
         >>> img = create_blank_image(64, 64, color=(255, 0, 0))
         >>> img.size
         (64, 64)
@@ -74,7 +74,7 @@ def create_random_image(width: int, height: int, image_mode: Literal["RGB", "RGB
 
     Example::
 
-        >>> from image_utils import create_random_image
+        >>> from visprep import create_random_image
         >>> img = create_random_image(64, 48)
         >>> img.size
         (64, 48)
@@ -114,7 +114,7 @@ def create_gradient_image(
 
     Example::
 
-        >>> from image_utils import create_gradient_image
+        >>> from visprep import create_gradient_image
         >>> img = create_gradient_image(64, 64, (255, 0, 0), (0, 0, 255))
         >>> img.size
         (64, 64)

@@ -1,1 +1,1 @@
-"""ImageUtils test suite."""
+"""VisPrep test suite."""

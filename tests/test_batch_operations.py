@@ -1,7 +1,7 @@
 """Tests for batch operation functions."""
 
 
-from image_utils import collect_images, collect_images_with_info, resize_images_to_fit
+from visprep import collect_images, collect_images_with_info, resize_images_to_fit
 
 import pytest
 from pathlib import Path

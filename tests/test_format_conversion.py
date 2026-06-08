@@ -1,7 +1,7 @@
 """Tests for format conversion functions."""
 
 
-from image_utils import b64_to_cv2, b64_to_pil, cv2_to_b64, cv2_to_pil, pil_to_b64, pil_to_cv2
+from visprep import b64_to_cv2, b64_to_pil, cv2_to_b64, cv2_to_pil, pil_to_b64, pil_to_cv2
 
 import pytest
 from PIL import Image

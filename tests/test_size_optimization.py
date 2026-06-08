@@ -1,7 +1,7 @@
 """Tests for size optimization functions."""
 
 
-from image_utils import estimate_compressed_size, get_image_size_mb, resize_to_max_size, save_image_to_max_size
+from visprep import estimate_compressed_size, get_image_size_mb, resize_to_max_size, save_image_to_max_size
 
 import pytest
 from PIL import Image

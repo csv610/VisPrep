@@ -1,7 +1,7 @@
 """Tests for metadata functions."""
 
 
-from image_utils import auto_orient, get_image_info, remove_exif
+from visprep import auto_orient, get_image_info, remove_exif
 
 import pytest
 from PIL import Image

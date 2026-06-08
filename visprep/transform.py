@@ -6,7 +6,7 @@ from typing import Literal
 
 from PIL import Image
 
-from image_utils._utils import (
+from visprep._utils import (
     _convert_to_rgb, _estimate_base64_size, _resize_image_to_quality,
     MAX_TOTAL_IMAGE_PAYLOAD_BYTES, MAX_TOTAL_IMAGE_PAYLOAD_MB, logger,
 )

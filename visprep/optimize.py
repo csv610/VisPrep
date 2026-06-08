@@ -7,7 +7,7 @@ from typing import Literal
 
 from PIL import Image
 
-from image_utils._utils import _convert_to_rgb, _validate_file_exists, MIN_IMAGE_DIMENSION, logger
+from visprep._utils import _convert_to_rgb, _validate_file_exists, MIN_IMAGE_DIMENSION, logger
 
 
 def resize_to_max_size(
@@ -109,7 +109,7 @@ def save_image_to_max_size(
         The ``output_path`` string.
     """
     fmt = "JPEG" if target_format.upper() in ("JPG", "JPEG") else target_format.upper()
-    from image_utils.save import save_pil_image
+    from visprep.save import save_pil_image
     return save_pil_image(resize_to_max_size(image_path, max_size, size_unit, fmt, min_quality), output_path, format=fmt)
 
 

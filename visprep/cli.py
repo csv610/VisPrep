@@ -1,4 +1,4 @@
-"""Command-line interface for image_utils."""
+"""Command-line interface for visprep."""
 
 import argparse
 import sys
@@ -7,7 +7,7 @@ from pathlib import Path
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="image-utils",
+        prog="visprep",
         description="Image processing utilities for vision analysis pipelines.",
     )
     sub = parser.add_subparsers(dest="command", required=True)
@@ -70,7 +70,7 @@ def main(argv: list | None = None) -> None:
 
 
 def _cmd_prepare(args) -> None:
-    from image_utils.adapters import prepare_for_api
+    from visprep.adapters import prepare_for_api
 
     b64 = prepare_for_api(
         args.input,
@@ -90,7 +90,7 @@ def _cmd_prepare(args) -> None:
 
 
 def _cmd_info(args) -> None:
-    from image_utils.metadata import get_image_info
+    from visprep.metadata import get_image_info
 
     info = get_image_info(args.input)
     for key, val in info.items():
@@ -99,12 +99,12 @@ def _cmd_info(args) -> None:
 
 def _cmd_resize(args) -> None:
     if args.max_size:
-        from image_utils.optimize import save_image_to_max_size
+        from visprep.optimize import save_image_to_max_size
         result = save_image_to_max_size(args.input, args.output, args.max_size)
         print(f"Resized to {result}")
     elif args.width and args.height:
-        from image_utils.transform import resize_to_dimensions
-        from image_utils.save import save_pil_image
+        from visprep.transform import resize_to_dimensions
+        from visprep.save import save_pil_image
         img = resize_to_dimensions(args.input, args.width, args.height)
         save_pil_image(img, args.output)
         print(f"Resized to {args.output}")
@@ -114,8 +114,8 @@ def _cmd_resize(args) -> None:
 
 
 def _cmd_square(args) -> None:
-    from image_utils.transform import square_image
-    from image_utils.save import save_pil_image
+    from visprep.transform import square_image
+    from visprep.save import save_pil_image
 
     try:
         parts = [int(c) for c in args.bg.split(",")]
@@ -132,7 +132,7 @@ def _cmd_square(args) -> None:
 
 
 def _cmd_collect(args) -> None:
-    from image_utils.collect import collect_images
+    from visprep.collect import collect_images
 
     images = collect_images(
         args.directory,

@@ -7,7 +7,7 @@ from typing import Literal
 
 from PIL import Image
 
-from image_utils._utils import _convert_to_rgb, MAX_IMAGE_SIZE_BYTES, logger
+from visprep._utils import _convert_to_rgb, MAX_IMAGE_SIZE_BYTES, logger
 
 
 _ORIENT_MAP: dict[int, tuple] = {
@@ -79,7 +79,7 @@ def prepare_for_api(
 
     if auto_rotate:
         try:
-            from image_utils.metadata import auto_orient as _orient
+            from visprep.metadata import auto_orient as _orient
             if isinstance(image_input, str):
                 img = _orient(image_input)
             else:
@@ -89,7 +89,7 @@ def prepare_for_api(
 
     if strip_exif:
         if isinstance(image_input, str):
-            from image_utils.metadata import remove_exif as _strip
+            from visprep.metadata import remove_exif as _strip
             img = _strip(image_input)
         else:
             buf = io.BytesIO()

@@ -1,7 +1,7 @@
 """Integration tests for complex workflows."""
 
 
-from image_utils import auto_orient, b64_to_cv2, b64_to_pil, collect_images, collect_images_with_info, convert_format, create_blank_image, create_gradient_image, create_random_image, crop, cv2_to_b64, cv2_to_pil, estimate_compressed_size, get_image_info, get_image_size_mb, pil_to_b64, pil_to_cv2, remove_exif, resize_to_dimensions, resize_to_max_size, save_image_to_max_size, save_images_batch, save_pil_image, square_image
+from visprep import auto_orient, b64_to_cv2, b64_to_pil, collect_images, collect_images_with_info, convert_format, create_blank_image, create_gradient_image, create_random_image, crop, cv2_to_b64, cv2_to_pil, estimate_compressed_size, get_image_info, get_image_size_mb, pil_to_b64, pil_to_cv2, remove_exif, resize_to_dimensions, resize_to_max_size, save_image_to_max_size, save_images_batch, save_pil_image, square_image
 
 import pytest
 from pathlib import Path

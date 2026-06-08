@@ -1,7 +1,7 @@
 """Tests for save and export functions."""
 
 
-from image_utils import collect_images, convert_format, create_gradient_image, resize_to_dimensions, save_cv2_image, save_from_b64, save_from_path, save_image, save_images_batch, save_pil_image
+from visprep import collect_images, convert_format, create_gradient_image, resize_to_dimensions, save_cv2_image, save_from_b64, save_from_path, save_image, save_images_batch, save_pil_image
 
 import io
 
